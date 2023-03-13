@@ -1,20 +1,3 @@
-
-
-<?php
-  $con = mysqli_connect("localhost","root","","bhumi");
-  if(isset($_POST['submit']))
-   {
-	   $name=$_POST['name'];
-	   $email=$_POST['email'];
-	   $msg=$_POST['msg'];
-	   $sql="INSERT INTO `cont`(`name`, `email`, `massage`) VALUES ('$name','$email','$msg')";
-	   $res=mysqli_query($con ,$sql);
-	   echo $res;
-	   header("location:index.php");
-   }
- 
-?>
- 
 <html>
     <head>
         <title>Couriers</title>
@@ -51,33 +34,24 @@
                 </div>
             </div>
         </nav>
-		
-             
-         </div>
-		 <div class="container" style="margin-top: 20px; width: 85%;">
-            <div class="row">
-                <div class="col-md-6 text-center p-5" style="background-color: rgba(255, 255, 255, 0.7); color: black; ">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaTMwTezgB2l5AhBGAqBnzRxCg6NwfMeLOcg&usqp=CAU " width="400" height="400">
-                                  
-                </div>
-		<div class="col-md-6 text-center p-5" style="background-color: rgba(255, 255, 255, 0.7); color: black;  "  id='contact'>
-                        <h4 style="border-bottom:2px solid white; padding-bottom:2px;">Contact Us</h4>
-                        <form action="index.php" class="form text-left" method = "POST">
-                            <div class="form-group">
-                                <label>Name : </label>
-								<input type="text" name="name" class="form-control" placeholder="Enter name" required></br>
-							 </div>
-                             
-                               <div class="form-group">							 
-								<label>EMAIL :</label>
-								<input type="text" name="email" class="form-control" placeholder="Enter email" required></br>
-							  </div>
-                         
-							<div class="form-group">
-								<label>MASSAGE : </label>
-								<input type="text" name="msg" class="form-control" placeholder="Enter massage" required></br>
-							</div>	
-								 <input type="submit" name="submit" value="Submit" class="btn btn-info">
-                        </form>
-                </div>
-             </div>
+		<div class="container">
+		 <div class="#">
+		    <div class="p-3 col-12" style="background-color: rgb(255, 255, 255, 0.7); margin-top:5px !important;">
+			<ul style="list-style-type:none;">
+			   <li><a href="#" class="fa fa-map-marker m-1" style="pointer-events: none;"></a>
+			   <li><a href="#" class="fa fa-phone m-1" style="pointer-events: none;"></a>
+			   <li><a href="#" class="fa fa-envelope m-1" style="pointer-events: none;"></a>
+			</ul>
+		 </div>
+		 </div>
+		 <div class="container-fluid text-center mt-5" style="background-color: rgba(255 , 255 ,255, 0.7); pandding:20px; position: relative;">
+		  <a class="fa fa-facebook" href="#" style="border: none; text-decoration: none; margin: 0em 1em; color:black; font-size: xx-large;"></a>
+		  <a class="fa fa-instagram" href="#" style="border: none; text-decoration: none; margin: 0em 1em; color:black; font-size: xx-large;"></a>
+		  <a class="fa fa-envelope" href="#" style="border: none; text-decoration: none; margin: 0em 1em; color:black; font-size: xx-large;"></a>
+		 </div>
+		 </div>
+		</div>
+	
+
+		<div class="i-bar" style="display: flex; flex-direction: row; flex-warp: wrap; justify-conter: center; margin-bottom: 2em;">
+		 

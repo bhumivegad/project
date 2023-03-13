@@ -1,20 +1,4 @@
 
-
-<?php
-  $con = mysqli_connect("localhost","root","","bhumi");
-  if(isset($_POST['submit']))
-   {
-	   $name=$_POST['name'];
-	   $email=$_POST['email'];
-	   $msg=$_POST['msg'];
-	   $sql="INSERT INTO `cont`(`name`, `email`, `massage`) VALUES ('$name','$email','$msg')";
-	   $res=mysqli_query($con ,$sql);
-	   echo $res;
-	   header("location:index.php");
-   }
- 
-?>
- 
 <html>
     <head>
         <title>Couriers</title>
@@ -29,7 +13,13 @@
         <link rel="icon" type="image/png" sizes="32x32" href="Image/favicon-32x32.png">
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	</head>
+        <style>
+            .carousel-inner img {
+              width: 100%;
+              height: 100%;
+            }
+        </style>
+    </head>
 	<body style="font-family: Arial, Helvetica, sans-serif;">
         <div ><img src="Image/logo.png" id="logo" style="height: 100px !important;  margin-top: 10px !important;"  ></div>
         <div class="background"></div> 
@@ -51,8 +41,55 @@
                 </div>
             </div>
         </nav>
-		
-             
+		 <div class = "container-fluid" style="width: 100%; padding: 0; margin: 0;">
+            <div id = "carouselwithIndicators" class = "carousel slide container-fluid mt-10" data-ride = "carousel" style="width: 85%; height: 100%; border-radius: 15px;">
+               <ol class = "carousel-indicators ">
+                  <li data-target = "#carouselExampleIndicators" data-slide-to = "0" class = "active"></li>
+                  <li data-target = "#carouselExampleIndicators" data-slide-to = "1"></li>
+                  <li data-target = "#carouselExampleIndicators" data-slide-to = "2s"></li>
+               </ol>
+               
+               <div class =" carousel-inner">
+                  <div class = "carousel-item active">
+                     <img class = "d-block " 
+                        src = "Image/c2.jpg" 
+                        alt = "First slide" style="height: 80vh; width: fit-content;">
+                  </div>
+                  
+                  <div class = "carousel-item">
+                     <img class = "d-block " 
+                        src = "Image/c3.jpg" 
+                        alt = "Second slide" style="height: 80vh; width: fit-content;">
+                  </div>
+                  <div class = "carousel-item">
+                     <img class = "d-block " 
+                        src = "Image/c4.jpg" 
+                        alt = "Third slide" style="height: 80vh; width: fit-content;">
+                  </div>
+               </div>
+               
+               <a class = "carousel-control-prev" href = "#carouselwithIndicators" role = "button" data-slide = "prev">
+                  <span class = "carousel-control-prev-icon" aria-hidden = "true" style="color: black;"></span>
+                  <span class = "sr-only">Previous</span>
+               </a>
+               
+               <a class = "carousel-control-next " href = "#carouselwithIndicators" role = "button" data-slide = "next">
+                  <span class = "carousel-control-next-icon" aria-hidden = "true" style="color: black;"></span>
+                  <span class = "sr-only">Next</span>
+               </a>
+             </div>
+         </div>
+         <div class="container" id="about" style="margin-top: 20px; width: 85%;">
+             <div class="row">
+                <div class="col-md-6 p-5" style="background-color: rgba(255, 255, 255, 0.7); color: black; border-radius: 15px; ">
+                    <h2 class="display-5 text-center mb-3 pb-2" style="border-bottom: 2px solid white;">About Us</h2>
+                    <p>The launch of CC Couriers from the house of CC Cargo services is exclusively designed to meet the commercial and personal shipment needs of our customers in both urban and rural destinations. We are emerging as a top destination for ‘same-day’ transportation and are continuously serving our customers 24/7/365. We constantly expand our resources to cater to our customer expectation addressing their unique market needs.</p>
+                    <p class="pb-3" style="border-bottom: 2px solid white;">Having created a brand in the cargo industry we have ventured into the courier business with the same commitment. We offer flexible and faster delivery solutions. We have spread our footprints far and wide with our bouquet of products and services. We deliver promptly for all your time critical projects.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="Image/abt3.jpg" style="height: 500px; width: 100%; padding-top: 5%;" >
+                </div>
+             </div>
          </div>
 		 <div class="container" style="margin-top: 20px; width: 85%;">
             <div class="row">
@@ -60,7 +97,7 @@
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaTMwTezgB2l5AhBGAqBnzRxCg6NwfMeLOcg&usqp=CAU " width="400" height="400">
                                   
                 </div>
-		<div class="col-md-6 text-center p-5" style="background-color: rgba(255, 255, 255, 0.7); color: black;  "  id='contact'>
+                <div class="col-md-6 text-center p-5" style="background-color: rgba(255, 255, 255, 0.7); color: black;  "  id='contact'>
                         <h4 style="border-bottom:2px solid white; padding-bottom:2px;">Contact Us</h4>
                         <form action="index.php" class="form text-left" method = "POST">
                             <div class="form-group">
@@ -81,3 +118,8 @@
                         </form>
                 </div>
              </div>
+            
+         </div>
+        
+    </body>
+</html>
